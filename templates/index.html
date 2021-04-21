@@ -17,13 +17,13 @@
                 <div style="width:50%;float:left">
                     <img style="width:100%" src="{{ url_for('static', filename ='qr.png') }}"/>
                 </div>
-                <div style="width:50%;float:left;padding-top:10%;">
+                <div style="width:50%;float:left;">
                     <div>
-                      <h1>Expire Date : {{ result.get('From')}}</h1>
-                      <h1>Annual Fee : {{ result.get('AnnualFee') }}</h1>
-                      <h1>Nic : {{ result.get('NIC') }}</h1>
-                      <h1>Name : {{ result.get('oName') }}</h1>
-                      <h1>No of seats : {{ result.get('Seats') }}</h1>
+                      <h2>Expire Date : {{ result.get('From')}}</h2>
+                      <h2>Annual Fee : {{ result.get('AnnualFee') }}</h2>
+                      <h2>Nic : {{ result.get('NIC') }}</h2>
+                      <h2>Name : {{ result.get('oName') }}</h2>
+                      <h2>No of seats : {{ result.get('Seats') }}</h2>
                     </div>            
                 </div>
             </div>
