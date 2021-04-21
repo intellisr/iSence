@@ -6,6 +6,7 @@ from firebase_admin import db
 from firebase_admin import firestore
 from PIL import Image
 import pytz
+from datetime import date
 
 # Fetch the service account key JSON file contents
 cred = credentials.Certificate('isence-firebase-adminsdk-r320k-7a2dce5241.json')
@@ -29,7 +30,8 @@ def main():
     if doc.exists:
         documentData=doc.to_dict()
         expireDate=documentData.get('From')
-        if expireDate == expireDate:
+        today = date.today()
+        if expireDate.date == expireDate.date:
             color='red'
         else:
             color='red'    

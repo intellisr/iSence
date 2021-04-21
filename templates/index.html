@@ -13,31 +13,18 @@
     </head>
     <body style="color:'{{color}}'">
         <div class="container">
-            <div class="row ">
-                <div class="col">
-                    <img style="width:50%;hight:50%" src="{{ url_for('static', filename ='qr.png') }}"/>
+            <div class="row">
+                <div style="width:50%;float:left">
+                    <img style="width:100%" src="{{ url_for('static', filename ='qr.png') }}"/>
                 </div>
-                <div class="col">
-                    <table class="table table-hover">
-                        <thead class="info">
-                          <tr>
-                            <th>Expire Date</th>
-                            <th>Annual Fee</th>
-                            <th>NIC</th>
-                            <th>Owner Name</th>
-                            <th>No Of Seats</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>       
-                            <td>{{ result.get('From')}}</td>
-                            <td>{{ result.get('AnnualFee') }}</td>
-                            <td>{{ result.get('NIC') }}</td>
-                            <td>{{ result.get('oName') }}</td>
-                            <td>{{ result.get('Seats') }}</td>
-                          </tr>
-                        </tbody>
-                      </table>   
+                <div style="width:50%;float:left;padding-top:10%;">
+                    <div>
+                      <h1>Expire Date : {{ result.get('From')}}</h1>
+                      <h1>Annual Fee : {{ result.get('AnnualFee') }}</h1>
+                      <h1>Nic : {{ result.get('NIC') }}</h1>
+                      <h1>Name : {{ result.get('oName') }}</h1>
+                      <h1>No of seats : {{ result.get('Seats') }}</h1>
+                    </div>            
                 </div>
             </div>
         </div> 
