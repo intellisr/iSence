@@ -26,7 +26,7 @@ doc = doc_ref.get()
 if doc.exists:
 	documentData=doc.to_dict()
 	expireDate=documentData.get('From')
-	if expireDate == expireDate:
+	if expireDate > expireDates:
 		while True:
 			port="/dev/ttyAMA0"
 			ser=serial.Serial(port, baudrate=9600, timeout=0.5)
@@ -37,10 +37,10 @@ if doc.exists:
 				newmsg=pynmea2.parse(newdata)
 				lat=newmsg.latitude
 				lng=newmsg.longitude
+				mydict={'regNo':Uid,'latitude':lat,'longitude':lng}
 				ref2 = db.reference('Location/'+ Uid)
-				ref2.update(newmsg)
+				ref2.update(mydict)
 				gps = "Latitude=" + str(lat) + "and Longitude=" + str(lng)
 				print(gps)
 else:
     print(u'No such document!')
-
